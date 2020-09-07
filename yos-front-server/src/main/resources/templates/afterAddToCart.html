@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<input id="userId" type="hidden" th:value="${userId}" >
+	<script>
+		var userId = document.getElementById('userId').value;
+		if(confirm('장바구니로 이동하시겠습니까?')) {
+			location.href="http://yos.yoggaebi.com/cart?userId=" + userId;
+		}else {
+			location.href="http://yos.yoggaebi.com/main";
+		}
+	</script>
+</body>
+</html>

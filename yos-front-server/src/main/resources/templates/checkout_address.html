@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<title>Yoggaeb MALL</title>
+<meta
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+	name="viewport" />
+<meta content="" name="description" />
+<meta content="" name="author" />
+
+<!-- ================== BEGIN BASE CSS STYLE ================== -->
+<link
+	href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"
+	rel="stylesheet" />
+<link href="/assets/plugins/jquery-ui/jquery-ui.min.css"
+	rel="stylesheet" />
+<link href="/assets/plugins/bootstrap/4.1.3/css/bootstrap.min.css"
+	rel="stylesheet" />
+<link href="/assets/plugins/font-awesome/5.2/css/all.min.css"
+	rel="stylesheet" />
+<link href="/assets/plugins/animate/animate.min.css" rel="stylesheet" />
+<link href="/assets/css/default/style.min.css" rel="stylesheet" />
+<link href="/assets/css/default/style-responsive.min.css"
+	rel="stylesheet" />
+<link href="/assets/css/default/theme/default.css" rel="stylesheet" />
+<!-- ================== END BASE CSS STYLE ================== -->
+
+<link href="/e_commerce/assets/css/e-commerce/style.min.css"
+	rel="stylesheet" />
+<link href="/e_commerce/assets/css/e-commerce/style-responsive.min.css"
+	rel="stylesheet" />
+<link href="/e_commerce/assets/css/e-commerce/theme/default.css"
+	id="theme" rel="stylesheet" />
+
+<!-- ================== BEGIN BASE JS ================== -->
+<script src="/assets/plugins/pace/pace.min.js"></script>
+<!-- ================== END BASE JS ================== -->
+</head>
+<body>
+	<!-- begin #page-loader -->
+	<div id="page-loader" class="fade show">
+		<span class="spinner"></span>
+	</div>
+	<!-- end #page-loader -->
+
+	<!-- begin #page-container -->
+	<div id="page-container"
+		class="fade page-sidebar-fixed page-header-fixed">
+		<!-- begin #header -->
+		<div id="header" class="header navbar-default">
+			<!-- begin navbar-header -->
+			<div class="navbar-header">
+				<a th:href="@{/main}" class="navbar-brand"><span
+					class="navbar-logo"></span> <b>Yoggaeb</b> Store</a>
+				<button type="button" class="navbar-toggle"
+					data-click="sidebar-toggled">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+			</div>
+			<!-- end navbar-header -->
+
+			<!-- begin header-nav -->
+			<ul class="navbar-nav navbar-right">
+				<li>
+					<form class="navbar-form">
+						<div class="form-group">
+							<input type="text" class="form-control"
+								placeholder="Enter keyword" />
+							<button type="submit" class="btn btn-search">
+								<i class="fa fa-search"></i>
+							</button>
+						</div>
+					</form>
+				</li>
+				<li class="dropdown"><a href="javascript:;"
+					data-toggle="dropdown" class="dropdown-toggle f-s-14"> <i
+						class="fa fa-bell"></i> <span class="label">0</span>
+				</a>
+					<ul class="dropdown-menu media-list dropdown-menu-right">
+						<li class="dropdown-header">NOTIFICATIONS (0)</li>
+						<li class="text-center width-300 p-b-10">No notification
+							found</li>
+					</ul></li>
+				<li class="dropdown navbar-user"><a href="javascript:;"
+					class="dropdown-toggle" data-toggle="dropdown">
+						<div class="image image-icon bg-black text-grey-darker">
+							<i class="fa fa-user"></i>
+						</div> <span class="d-none d-md-inline">고객님</span> <b class="caret"></b>
+				</a>
+					<div class="dropdown-menu dropdown-menu-right">
+						<a th:href="@{/cart}" class="dropdown-item">Cart</a> 
+						<div class="dropdown-divider"></div>
+						<a href="javascript:;" class="dropdown-item">Log Out</a>
+					</div></li>
+			</ul>
+			<!-- end header navigation right -->
+		</div>
+		<!-- end #header -->
+
+		<!-- begin #sidebar -->
+		<div id="sidebar" class="sidebar">
+			<!-- begin sidebar scrollbar -->
+			<div data-scrollbar="true" data-height="100%">
+				<!-- begin sidebar user -->
+				<ul class="nav">
+					<li class="nav-profile"><a href="javascript:;"
+						data-toggle="nav-profile">
+							<div class="cover with-shadow"></div>
+							<div class="image image-icon bg-black text-grey-darker">
+								<i class="fa fa-user"></i>
+							</div>
+							<div class="info">
+								<b class="caret pull-right"></b> 고객님
+							</div>
+					</a></li>
+					<li>
+						<ul class="nav nav-profile">
+							<li><a href="javascript:;"><i class="fa fa-cog"></i>
+									Settings</a></li>
+							<li><a href="javascript:;"><i class="fa fa-pencil-alt"></i>
+									Send Feedback</a></li>
+							<li><a href="javascript:;"><i
+									class="fa fa-question-circle"></i> Helps</a></li>
+						</ul>
+					</li>
+				</ul>
+				<!-- end sidebar user -->
+				<!-- begin sidebar nav -->
+				<ul class="nav">
+					<li class="nav-header">Navigation</li>
+					<li class="active"><a th:href="@{/main}"> <i
+							class="fa fa-th-large"></i> <span>Home</span>
+					</a></li>
+					<!-- <li class="has-sub">
+						<a href="javascript:;">
+							<b class="caret"></b>
+							<i class="fa fa-align-left"></i> 
+							<span>Menu Level</span>
+						</a>
+						<ul class="sub-menu">
+							<li class="has-sub">
+								<a href="javascript:;">
+									<b class="caret"></b>
+									Menu 1.1
+								</a>
+								<ul class="sub-menu">
+									<li class="has-sub">
+										<a href="javascript:;">
+											<b class="caret"></b>
+											Menu 2.1
+										</a>
+										<ul class="sub-menu">
+											<li><a href="javascript:;">Menu 3.1</a></li>
+											<li><a href="javascript:;">Menu 3.2</a></li>
+										</ul>
+									</li>
+									<li><a href="javascript:;">Menu 2.2</a></li>
+									<li><a href="javascript:;">Menu 2.3</a></li>
+								</ul>
+							</li> 
+							<li class="has-sub">
+								<a href="javascript:;">
+									<b class="caret"></b>
+									Menu 1.1
+								</a>
+								<ul class="sub-menu">
+									<li><a href="javascript:;">Menu 2.2</a></li>
+									<li><a href="javascript:;">Menu 2.3</a></li>
+								</ul>
+							</li>
+							<li><a href="javascript:;">Top 상의</a></li>
+							<li><a href="javascript:;">Outer 아우터</a></li>
+							<li><a href="javascript:;">Bottom 하의</a></li>
+							<li><a href="javascript:;">Bag 가방</a></li>
+							<li><a href="javascript:;">Shoes 신발</a></li>
+							<li><a href="javascript:;">Watch 시계</a></li>
+							<li><a href="javascript:;">Headwear 모자</a></li>
+							<li><a href="javascript:;">Eyewear 안경</a></li>
+						</ul>
+					</li> -->
+					<li class="has-sub"><a href="javascript:;"> <b
+							class="caret"></b> <i class="fa fa-align-left"></i> <span>Top
+								상의</span>
+					</a>
+						<ul class="sub-menu">
+							<li><a th:href="@{/product/top/shortsleev}">반팔 티셔츠</a></li>
+							<li><a th:href="@{/product/top/longsleev}">긴팔 티셔츠</a></li>
+							<li><a th:href="@{/product/top/sleeveless}">민소매 티셔츠</a></li>
+							<li><a th:href="@{/product/top/shirtblouse}">셔츠/블라우스</a></li>
+							<li><a th:href="@{/product/top/pikekara}">피케/카라</a></li>
+							<li><a th:href="@{/product/top/mantoman}">맨투맨/스웨트</a></li>
+							<li><a th:href="@{/product/top/hood}">후드</a></li>
+							<li><a th:href="@{/product/top/sweater}">니트/스웨터/가디건</a></li>
+						</ul></li>
+
+					<li class="has-sub"><a href="javascript:;"> <b
+							class="caret"></b> <i class="fa fa-align-left"></i> <span>Outer
+								아우터</span>
+					</a>
+						<ul class="sub-menu">
+							<li><a th:href="@{/product/outer/MA1}">블루종/MA-1</a></li>
+							<li><a th:href="@{/product/outer/singlecoat}">겨울 싱글 코트</a></li>
+							<li><a th:href="@{/product/outer/leatherjacket}">레더/라이더스 재킷</a></li>
+							<li><a th:href="@{/product/outer/truckerjacket}">트러커 재킷</a></li>
+							<li><a th:href="@{/product/outer/longpadding}">롱패딩</a></li>
+							<li><a th:href="@{/product/outer/suit}">수트</a></li>
+							<li><a th:href="@{/product/outer/paddingvest}">패딩 베스트</a></li>
+						</ul></li>
+
+					<li class="has-sub"><a href="javascript:;"> <b
+							class="caret"></b> <i class="fa fa-align-left"></i> <span>Bottom
+								하의</span>
+					</a>
+						<ul class="sub-menu">
+							<li><a th:href="@{/product/bottom/denimpants}">데님 팬츠</a></li>
+							<li><a th:href="@{/product/bottom/cottonpants}">코튼 팬츠</a></li>
+							<li><a th:href="@{/product/bottom/skirt}">스커트</a></li>
+							<li><a th:href="@{/product/bottom/suitpants}">수트 팬츠/슬랙스</a></li>
+							<li><a th:href="@{/product/bottom/training}">트레이닝</a></li>
+							<li><a th:href="@{/product/bottom/leggings}">레깅스</a></li>
+						</ul></li>
+
+					<li class="has-sub"><a href="javascript:;"> <b
+							class="caret"></b> <i class="fa fa-align-left"></i> <span>Bag
+								가방</span>
+					</a>
+						<ul class="sub-menu">
+							<li><a th:href="@{/product/bag/bagpack}">백팩</a></li>
+							<li><a th:href="@{/product/bag/waistbag}">웨이스트 백</a></li>
+							<li><a th:href="@{/product/bag/crossbag}">크로스 백</a></li>
+							<li><a th:href="@{/product/bag/clutch}">클러치</a></li>
+							<li><a th:href="@{/product/bag/ecobag}">숄더/에코 백</a></li>
+							<li><a th:href="@{/product/bag/carrier}">캐리어</a></li>
+						</ul></li>
+
+					<li class="has-sub"><a href="javascript:;"> <b
+							class="caret"></b> <i class="fa fa-align-left"></i> <span>Shoes
+								신발</span>
+					</a>
+						<ul class="sub-menu">
+							<li><a th:href="@{/product/shoes/canvas}">캔버스/단화</a></li>
+							<li><a th:href="@{/product/shoes/shoes}">구두</a></li>
+							<li><a th:href="@{/product/shoes/loafers}">로퍼</a></li>
+							<li><a th:href="@{/product/shoes/boots}">부츠</a></li>
+							<li><a th:href="@{/product/shoes/boatmocha}">보트/모카</a></li>
+							<li><a th:href="@{/product/shoes/sandle}">샌들/슬리퍼</a></li>
+							<li><a th:href="@{/product/shoes/flat}">플랫</a></li>
+						</ul></li>
+
+					<li class="has-sub"><a href="javascript:;"> <b
+							class="caret"></b> <i class="fa fa-align-left"></i> <span>Watch
+								시계</span>
+					</a>
+						<ul class="sub-menu">
+							<li><a th:href="@{/product/watch/digital}">디지털</a></li>
+							<li><a th:href="@{/product/watch/analog}">오토매틱 아날로그</a></li>
+							<li><a th:href="@{/product/watch/quirtz}">쿼츠 아날로그</a></li>
+						</ul></li>
+
+					<li class="has-sub"><a href="javascript:;"> <b
+							class="caret"></b> <i class="fa fa-align-left"></i> <span>Headwear
+								모자</span>
+					</a>
+						<ul class="sub-menu">
+							<li><a th:href="@{/product/headwear/cab}">캡/야구 모자</a></li>
+							<li><a th:href="@{/product/headwear/fedora}">페도라</a></li>
+							<li><a th:href="@{/product/headwear/beanie}">비니</a></li>
+						</ul></li>
+
+					<li class="has-sub"><a href="javascript:;"> <b
+							class="caret"></b> <i class="fa fa-align-left"></i> <span>Eyewear
+								안경</span>
+					</a>
+						<ul class="sub-menu">
+							<li><a th:href="@{/product/eyewear/glasses}">안경</a></li>
+							<li><a th:href="@{/product/eyewear/sunglasses}">선글라스</a></li>
+						</ul></li>
+					<!-- begin sidebar minify button -->
+					<li><a href="javascript:;" class="sidebar-minify-btn"
+						data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a></li>
+					<!-- end sidebar minify button -->
+				</ul>
+				<!-- end sidebar nav -->
+			</div>
+			<!-- end sidebar scrollbar -->
+		</div>
+		<div class="sidebar-bg"></div>
+		<!-- end #sidebar -->
+
+		<!-- begin #content -->
+		<div id="content" class="content bg-silver">
+			<!-- begin breadcrumb -->
+			<!-- <ol class="breadcrumb pull-right">
+				<li class="breadcrumb-item"><a href="javascript:;">Home</a></li>
+				<li class="breadcrumb-item"><a href="javascript:;">Library</a></li>
+				<li class="breadcrumb-item active"><a href="javascript:;">Data</a></li>
+			</ol> -->
+			<!-- end breadcrumb -->
+			<!-- begin page-header -->
+			<h1 class="page-header">
+				Yoggaeb Store<small>요깨비의 MSA 쇼핑몰</small>
+			</h1>
+			<!-- end page-header -->
+			<div class="checkout">
+				<!-- <form th:action="@{/pay}" name="form_shipping" class="form-horizontal"> -->
+				<form action="http://yos.yoggaebi.com/pay" name="form_shipping" class="form-horizontal">
+					<!-- BEGIN checkout-header -->
+					<div class="checkout-header">
+						<!-- BEGIN row -->
+						<div class="row">
+							<!-- BEGIN col-3 -->
+							<div class="col-md-3 col-sm-3">
+								<div class="step">
+									<a href="checkout_cart.html">
+										<div class="number">1</div>
+										<div class="info">
+											<div class="title">주문상품 목록</div>
+											<!-- <div class="desc">Lorem ipsum dolor sit amet.</div> -->
+										</div>
+									</a>
+								</div>
+							</div>
+							<!-- END col-3 -->
+							<!-- BEGIN col-3 -->
+							<div class="col-md-3 col-sm-3">
+								<div class="step active">
+									<a href="#">
+										<div class="number">2</div>
+										<div class="info">
+											<div class="title">주소 입력</div>
+											<!-- <div class="desc">Vivamus eleifend euismod.</div> -->
+										</div>
+									</a>
+								</div>
+							</div>
+							<!-- END col-3 -->
+							<!-- BEGIN col-3 -->
+							<div class="col-md-3 col-sm-3">
+								<div class="step">
+									<a href="#">
+										<div class="number">3</div>
+										<div class="info">
+											<div class="title">결제</div>
+											<!-- <div class="desc">Aenean ut pretium ipsum.</div> -->
+										</div>
+									</a>
+								</div>
+							</div>
+							<!-- END col-3 -->
+							<!-- BEGIN col-3 -->
+							<div class="col-md-3 col-sm-3">
+								<div class="step">
+									<a href="checkout_complete.html">
+										<div class="number">4</div>
+										<div class="info">
+											<div class="title">완료</div>
+											<!-- <div class="desc">Curabitur interdum libero.</div> -->
+										</div>
+									</a>
+								</div>
+							</div>
+							<!-- END col-3 -->
+						</div>
+						<!-- END row -->
+					</div>
+					<!-- END checkout-header -->
+					<!-- BEGIN checkout-body -->
+					<div class="checkout-body">
+						<!-- <div class="form-group row">
+								<label class="col-form-label col-md-4 text-lg-right">
+								Product Name <span class="text-danger">*</span>
+								</label>
+								<div class="col-md-4">
+									<input id="productName" type="text" class="form-control" name="first_name" value="" placeholder="" />
+								</div>
+							</div> -->
+						<div class="form-group row">
+							<label class="col-form-label col-md-4 text-lg-right"> 보내는
+								사람 <span class="text-danger">*</span>
+							</label>
+							<div class="col-md-4">
+								<input id="senderId" th:value="${userId}" name="senderId"
+									type="hidden"> <input id="sender" type="text"
+									class="form-control" name="senderName" th:value="${userName}"
+									placeholder="" />
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-form-label col-md-4 text-lg-right"> 받는
+								사람<span class="text-danger">&nbsp;</span>
+							</label>
+							<div class="col-md-4">
+								<input id="receiver" type="text" class="form-control"
+									name="receiverName" value="" placeholder="" />
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-form-label col-md-4 text-lg-right">
+								Phone <span class="text-danger">*</span>
+							</label>
+							<div class="col-md-4">
+								<input id="phone" type="text" class="form-control" name="phone"
+									value="" placeholder="" />
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-form-label col-md-4 text-lg-right">
+								Address <span class="text-danger">*</span>
+							</label>
+							<div class="col-md-4">
+								<input id="postcode" name="postCode" type="text"
+									class="form-control" placeholder="우편번호" required /> <input
+									id="roadAddress" name="roadAddr" type="text"
+									class="form-control" placeholder="도로명 주소" required /> <input
+									id="jibunAddress" name="jibunAddr" type="text"
+									class="form-control" placeholder="지번 주소" required /> <input
+									id="extraAddress" name="extraAddr" type="text"
+									class="form-control" placeholder="참고 항목" required /> <input
+									id="detailAddress" name="detailAddr" type="text"
+									class="form-control" placeholder="상세 주소" required /> <span
+									id="guide" style="color: #999; display: none"></span>
+								<button type="button" class="btn btn-primary"
+									onclick="execDaumPostcode()">주소 찾기</button>
+							</div>
+						</div>
+						<hr />
+					</div>
+					<!-- END checkout-body -->
+					<!-- BEGIN checkout-footer -->
+					<div class="checkout-footer">
+						<a href="checkout_cart.html"
+							class="btn btn-white btn-lg pull-left">Back</a>
+						<button type="submit"
+							class="btn btn-inverse btn-lg p-l-30 p-r-30 m-l-10">주문하기</button>
+					</div>
+					<!-- END checkout-footer -->
+				</form>
+			</div>
+			<!-- END checkout -->
+
+		</div>
+		<!-- end #content -->
+
+		<!-- begin scroll to top btn -->
+		<a href="javascript:;"
+			class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade"
+			data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
+		<!-- end scroll to top btn -->
+	</div>
+	<!-- end page container -->
+
+	<!-- ================== BEGIN BASE JS ================== -->
+	<script src="/assets/plugins/jquery/jquery-3.3.1.min.js"></script>
+	<script src="/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+	<script
+		src="/assets/plugins/bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+	<!--[if lt IE 9]>
+		<script src="/assets/crossbrowserjs/html5shiv.js"></script>
+		<script src="/assets/crossbrowserjs/respond.min.js"></script>
+		<script src="/assets/crossbrowserjs/excanvas.min.js"></script>
+	<![endif]-->
+	<script src="/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="/assets/plugins/js-cookie/js.cookie.js"></script>
+	<script src="/assets/js/theme/default.min.js"></script>
+	<script src="/assets/js/apps.min.js"></script>
+	<script
+		src="/e_commerce/assets/plugins/paroller/jquery.paroller.min.js"></script>
+	<!-- <script src="/e_commerce/assets/js/e-commerce/apps.min.js"></script> -->
+	<!-- ================== END BASE JS ================== -->
+
+	<!-- 우편번호 다음 API -->
+	<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+	<script>
+		function execDaumPostcode() {
+			new daum.Postcode(
+					{
+						oncomplete : function(data) {
+							// 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+							// 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
+							// 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+							var roadAddr = data.roadAddress; // 도로명 주소 변수
+							var extraRoadAddr = ''; // 추가 정보 변수
+
+							// 법정동명이 있을 경우 추가한다. (법정리는 제외)
+							// 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+							if (data.bname !== ''
+									&& /[동|로|가]$/g.test(data.bname)) {
+								extraRoadAddr += data.bname;
+							}
+							// 건물명이 있고, 공동주택일 경우 추가한다.
+							if (data.buildingName !== ''
+									&& data.apartment === 'Y') {
+								extraRoadAddr += (extraRoadAddr !== '' ? ', '
+										+ data.buildingName : data.buildingName);
+							}
+							// 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+							if (extraRoadAddr !== '') {
+								extraRoadAddr = ' (' + extraRoadAddr + ')';
+							}
+
+							// 우편번호와 주소 정보를 해당 필드에 넣는다.
+							document.getElementById('postcode').value = data.zonecode;
+							document.getElementById("roadAddress").value = roadAddr;
+							document.getElementById("jibunAddress").value = data.jibunAddress;
+
+							// 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
+							if (roadAddr !== '') {
+								document.getElementById("extraAddress").value = extraRoadAddr;
+							} else {
+								document.getElementById("extraAddress").value = '';
+							}
+
+							var guideTextBox = document.getElementById("guide");
+							// 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.
+							if (data.autoRoadAddress) {
+								var expRoadAddr = data.autoRoadAddress
+										+ extraRoadAddr;
+								guideTextBox.innerHTML = '(예상 도로명 주소 : '
+										+ expRoadAddr + ')';
+								guideTextBox.style.display = 'block';
+
+							} else if (data.autoJibunAddress) {
+								var expJibunAddr = data.autoJibunAddress;
+								guideTextBox.innerHTML = '(예상 지번 주소 : '
+										+ expJibunAddr + ')';
+								guideTextBox.style.display = 'block';
+							} else {
+								guideTextBox.innerHTML = '';
+								guideTextBox.style.display = 'none';
+							}
+						}
+					}).open();
+		}
+	</script>
+
+	<script>
+		$(document).ready(function() {
+			App.init();
+		});
+	</script>
+</body>
+</html>
